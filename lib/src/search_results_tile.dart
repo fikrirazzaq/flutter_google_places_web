@@ -6,13 +6,15 @@ class SearchResultsTile extends StatelessWidget {
   final Address addressData;
   final Function(Address) callback;
   final Map<String, String> address;
-  SearchResultsTile({this.addressData, this.callback, this.address});
+  final int fontSize;
+  
+  SearchResultsTile({this.addressData, this.callback, this.address, this.fontSize = 12});
   @override
   Widget build(BuildContext context) {
     return ListTile(
         title: Text(
           '${addressData.name}',
-          style: TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: fontSize),
         ),
         dense: true,
         onTap: () {
