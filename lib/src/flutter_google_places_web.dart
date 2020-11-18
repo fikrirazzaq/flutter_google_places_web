@@ -45,17 +45,17 @@ class FlutterGooglePlacesWeb extends StatefulWidget {
   final bool required;
   final double fontSize;
 
-  FlutterGooglePlacesWeb(
-      {Key key,
-      this.apiKey,
-      this.proxyURL,
-      this.offset,
-      this.components,
-      this.sessionToken = true,
-      this.decoration,
-      this.required,
-      this.fontSize,
-      });
+  FlutterGooglePlacesWeb({
+    Key key,
+    this.apiKey,
+    this.proxyURL,
+    this.offset,
+    this.components,
+    this.sessionToken = true,
+    this.decoration,
+    this.required,
+    this.fontSize,
+  });
 
   @override
   FlutterGooglePlacesWebState createState() => FlutterGooglePlacesWebState();
@@ -113,6 +113,8 @@ class FlutterGooglePlacesWebState extends State<FlutterGooglePlacesWeb>
     }
     Response response = await Dio().get(componentsURL);
     var predictions = response.data['predictions'];
+    print("PREDIKSEN $predictions");
+    print("GEO ${response.data['geocode']}");
     if (predictions != []) {
       displayedResults.clear();
     }
