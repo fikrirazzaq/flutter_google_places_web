@@ -6,7 +6,7 @@ class SearchResultsTile extends StatelessWidget {
   final Address addressData;
   final Function(Address) callback;
   final Map<String, String> address;
-  final int fontSize;
+  final double fontSize;
   
   SearchResultsTile({this.addressData, this.callback, this.address, this.fontSize = 12});
   @override
