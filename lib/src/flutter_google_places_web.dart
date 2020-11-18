@@ -113,8 +113,8 @@ class FlutterGooglePlacesWebState extends State<FlutterGooglePlacesWeb>
     }
     Response response = await Dio().get(componentsURL);
     var predictions = response.data['predictions'];
-    print("PREDIKSEN $predictions");
-    print("GEO ${response.data['geocode']}");
+    print("PREDIKSEN\n$predictions\n\n");
+    print("FULLLLLLLLLLLLLL\n${response.data}");
     if (predictions != []) {
       displayedResults.clear();
     }
