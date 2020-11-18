@@ -43,7 +43,7 @@ class FlutterGooglePlacesWeb extends StatefulWidget {
   final String components;
   final InputDecoration decoration;
   final bool required;
-  final int fontSize;
+  final double fontSize;
 
   FlutterGooglePlacesWeb(
       {Key key,
