@@ -43,6 +43,7 @@ class FlutterGooglePlacesWeb extends StatefulWidget {
   final String components;
   final InputDecoration decoration;
   final bool required;
+  final int fontSize;
 
   FlutterGooglePlacesWeb(
       {Key key,
@@ -52,7 +53,9 @@ class FlutterGooglePlacesWeb extends StatefulWidget {
       this.components,
       this.sessionToken = true,
       this.decoration,
-      this.required});
+      this.required,
+      this.fontSize,
+      });
 
   @override
   FlutterGooglePlacesWebState createState() => FlutterGooglePlacesWebState();
@@ -189,6 +192,7 @@ class FlutterGooglePlacesWebState extends State<FlutterGooglePlacesWeb>
                     }
                     return null;
                   },
+                  style: TextStyle(fontSize: widget.fontSize),
                   onChanged: (text) {
                     setState(() {
                       getLocationResults(text);
@@ -212,7 +216,7 @@ class FlutterGooglePlacesWebState extends State<FlutterGooglePlacesWeb>
                                             top: 102, bottom: 102),
                                         child: CircularProgressIndicator(
                                           valueColor: _loadingTween,
-                                          strokeWidth: 6.0,
+                                          strokeWidth: 1.0,
                                         ),
                                       )
                                     : ListView(
@@ -222,6 +226,7 @@ class FlutterGooglePlacesWebState extends State<FlutterGooglePlacesWeb>
                                                 SearchResultsTile(
                                                     addressData: addressData,
                                                     callback: selectResult,
+                                                    fontSize: widget.fontSize,
                                                     address:
                                                         FlutterGooglePlacesWeb
                                                             .value))
